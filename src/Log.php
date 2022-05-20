@@ -31,7 +31,7 @@ class LogBuilder {
 		$this->dir($dir);
 	}
 	public function dir($dir) {
-		if ($this->createDir($dir)) {
+		if (!$this->createDir($dir)) {
 			throw new \Exception('Log directory creation failed or is not writable.');
 		}
 		$this->dir = $dir;
